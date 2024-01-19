@@ -80,7 +80,6 @@ export class UserService {
             const res = await this.userRepository.createQueryBuilder()
                         .where("userId=:id",{id:login.userId})
                         .andWhere("password=:pw",{pw:login.password})
-                        .andWhere("isApproved=true")
                         .getOne();
             
             return res;
