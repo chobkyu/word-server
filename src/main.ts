@@ -21,10 +21,10 @@ async function bootstrap() {
   })
   /*Swagger 자동 api 문서 생성*/ 
   const config = new DocumentBuilder()
-    .setTitle('칵테일 서버 API')
-    .setDescription('칵테일 서버 API입니다')
+    .setTitle('영어단어 서버 API')
+    .setDescription('영어단어 서버 API입니다')
     .setVersion('1.0')
-    .addTag('alcohol')
+    .addTag('word')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
