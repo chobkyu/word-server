@@ -226,7 +226,7 @@ export class WordService {
             scoreEntity.score = score;
 
             const res = await queryRunner.query(
-                `insert into score(score,grade,userSeq,date,chapter) values (${scoreEntity.score},'${scoreEntity.grade}',${scoreEntity.user},'${scoreEntity.date}',${scoreEntity.chapter})`
+                `insert into score(score,grade,userSeq,date,chapter) values (${scoreEntity.score},'${scoreEntity.grade}',${scoreEntity.user},CURRENT_TIMESTAMP,${scoreEntity.chapter})`
             );
             // await this.scoreRepository.save(scoreEntity);
           
@@ -278,7 +278,7 @@ export class WordService {
 
       /**채점 타입 2 */
       countType2(answer:AnswerDto){
-        return answer.en===answer.answer ? {success:true} : {success:false}
+        return answer.en===answer.answer.toLowerCase() ? {success:true} : {success:false}
       }
 
       /**등급 가져오기 */
