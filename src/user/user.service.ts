@@ -115,7 +115,7 @@ export class UserService {
             userEntity.password = userInfo.password;
             userEntity.name = userInfo.name;
             userEntity.school = userInfo.school;
-            userEntity.isApproved = false;
+            userEntity.isApproved = true;
             userEntity.motherEmail = userInfo.motherEmail;
 
             await this.userRepository.insert(userEntity);
